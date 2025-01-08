@@ -2,7 +2,7 @@ package TEMA4;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,11 +17,13 @@ public class Ejercicio3 {
 
 	public static String getMayMin(Integer num, String cad) {
 		cad = cad.trim();
+
 		if (num == 1) {
-			cad = cad.toUpperCase();
+			cad = Ejercicio1.getMayusculas(cad);
 		} else {
-			cad = cad.toLowerCase();
+			cad = Ejercicio2.getMinusculas(cad);
 		}
 		return cad;
 	}
+
 }
