@@ -28,23 +28,18 @@ public class Calculadora {
 	public static Integer calcular(String cad, Integer n1, Integer n2) {
 
 		if (cad.equals("ADD")) {
-			Integer suma = suma(n1, n2);
-			return suma;
+			return suma(n1, n2);
 		}
 		if (cad.equals("SUB")) {
-			Integer division = division(n1, n2);
-			return division;
+			return division(n1, n2);
 		}
 		if (cad.equals("MUL")) {
-			Integer multiplicacion = multiplicacion(n1, n2);
-			return multiplicacion;
-
+			return multiplicacion(n1, n2);
+	}
+		if (cad.equals("DIV")) {
+			return division(n1, n2);
 		}
-		if(cad.equals("DIV")) {
-			Integer division = division(n1,n2);
-			return division ;
-		}
-		return n1;
+		return null;
 	}
 
 }
