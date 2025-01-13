@@ -17,15 +17,13 @@ public class ArrayUtils {
 
 	public static Integer buscarPalabra(String[] array, String palabra) {
 
-		if (array == null || palabra == null) {
-            return -1; 
-        }
 
-        for (int i = 0; i < array.length; i++) {
-            if (palabra.equals(array[i])) {
-                return i; 
-            }
-        }
+		for (int i = 0; i < array.length; i++) {
+			if (palabra.equals(array[i])) {
+				return i;	
+			}
+		}
 
-        return -1;
-	}}
+		return -1;
+	}
+}
