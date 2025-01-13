@@ -9,25 +9,23 @@ public class ArrayUtils {
 
 	public static String obtenerPalabra(String[] cad, Integer n1) {
 		if (n1 >= cad.length || n1 < 0) {
-		return " ";
+			return " ";
 		}
 		String lugar = cad[n1];
 		return lugar;
 	}
-	public static Integer buscarPalabra (String[]cad, String cad1) {
-		
-		if(!cad.equals(cad1)) {
-			return -1;
-		}
-		else
-			for(String dato:cad) {
-				Integer contador = 0;
-				do {
-					contador ++;
-					
-				}while(cad.equals(cad1));
-			}
-		
-		return;
-	}
-}
+
+	public static Integer buscarPalabra(String[] array, String palabra) {
+
+		if (array == null || palabra == null) {
+            return -1; 
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            if (palabra.equals(array[i])) {
+                return i; 
+            }
+        }
+
+        return -1;
+	}}
