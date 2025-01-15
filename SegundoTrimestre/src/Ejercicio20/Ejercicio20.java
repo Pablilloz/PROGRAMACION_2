@@ -1,8 +1,10 @@
-package OrientadaObjetos;
+package Ejercicio20;
 
 import java.util.Scanner;
 
-public class Ejercicio18 {
+import OrientadaObjetos.Alumno;
+
+public class Ejercicio20 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,7 +14,8 @@ public class Ejercicio18 {
 
 		System.out.print("DNI = ");
 		String dni = sc.nextLine();
-		Alumno1.setDni(dni);
+		Alumno alumno = new Alumno(dni);
+	
 
 		System.out.print("Nombre = ");
 		String nombre = sc.nextLine();
@@ -40,3 +43,4 @@ public class Ejercicio18 {
 	}
 
 }
+

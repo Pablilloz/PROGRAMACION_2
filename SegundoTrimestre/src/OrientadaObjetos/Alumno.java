@@ -1,12 +1,17 @@
 package OrientadaObjetos;
 
-public class Alumno {
+import Ejercicio21.Persona;
+
+public class Alumno extends Persona {
 
 	private String nombre;
 	private Integer edad;
 	private Double nota;
-	private Integer dni;
+	private String dni;
 
+	public Alumno(String dni) {
+	this.dni = dni;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -31,11 +36,11 @@ public class Alumno {
 		this.nota = nota;
 	}
 
-	public Integer getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(Integer dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
