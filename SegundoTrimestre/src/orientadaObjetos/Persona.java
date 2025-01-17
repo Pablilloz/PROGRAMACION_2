@@ -1,4 +1,4 @@
-package Ejercicio21;
+package orientadaObjetos;
 
 public class Persona {
 private String nombre;

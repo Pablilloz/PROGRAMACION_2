@@ -1,4 +1,4 @@
-package OrientadaObjetos;
+package orientadaObjetos;
 
 import java.util.Scanner;
 

@@ -1,31 +1,15 @@
-package OrientadaObjetos;
-
-import Ejercicio21.Persona;
+package orientadaObjetos;
 
 public class Alumno extends Persona {
 
-	private String nombre;
-	private Integer edad;
 	private Double nota;
 	private String dni;
+	
+	
 
 	public Alumno(String dni) {
-	this.dni = dni;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Integer getEdad() {
-		return edad;
-	}
-
-	public void setEdad(Integer edad) {
-		this.edad = edad;
+		super();
+		this.dni = dni;
 	}
 
 	public Double getNota() {

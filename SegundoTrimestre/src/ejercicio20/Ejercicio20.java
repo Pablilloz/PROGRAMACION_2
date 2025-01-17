@@ -1,8 +1,8 @@
-package Ejercicio20;
+package ejercicio20;
 
 import java.util.Scanner;
 
-import OrientadaObjetos.Alumno;
+import orientadaObjetos.Alumno;
 
 public class Ejercicio20 {
 
@@ -10,37 +10,31 @@ public class Ejercicio20 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 
-		Alumno Alumno1 = new Alumno(null);
-
 		System.out.print("DNI = ");
 		String dni = sc.nextLine();
 		Alumno alumno = new Alumno(dni);
-	
 
 		System.out.print("Nombre = ");
 		String nombre = sc.nextLine();
-		Alumno1.setNombre(nombre);
+		alumno.setNombre(nombre);
 
 		System.out.print("Edad = ");
 		Integer edad = sc.nextInt();
-		Alumno1.setEdad(edad);
+		alumno.setEdad(edad);
 
 		System.out.print("Nota = ");
 		Double nota = sc.nextDouble();
-		Alumno1.setNota(nota);
-		
-		System.out.println("DNI = "+ Alumno1.getDni());
-		System.out.println("NOMBRE = " + Alumno1.getNombre());
-		System.out.println("Edad = " + Alumno1.getEdad());
-		System.out.println("Nota = " + Alumno1.getNota());
-		
-		
-		Alumno1.aprobar();
-		System.out.println("Nueva nota = " + Alumno1.getNota());
+		alumno.setNota(nota);
+
+		System.out.println("DNI = " + alumno.getDni());
+		System.out.println("NOMBRE = " + alumno.getNombre());
+		System.out.println("Edad = " + alumno.getEdad());
+		System.out.println("Nota = " + alumno.getNota());
+
+		alumno.aprobar();
+		System.out.println("Nueva nota = " + alumno.getNota());
 		sc.close();
-		
-		
+
 	}
 
 }
-
