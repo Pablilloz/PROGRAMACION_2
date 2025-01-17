@@ -6,6 +6,14 @@ public class Alumno extends Persona {
 	private String dni;
 	
 	
+public Alumno() {
+	
+}
+	
+	@Override
+	public String toString() {
+		return "Alumno [nota=" + nota + ", dni=" + dni + "]";
+	}
 
 	public Alumno(String dni) {
 		super();
