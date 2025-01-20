@@ -32,8 +32,8 @@ public class Main24 {
 		sc.close();
 	/*	System.out.println("El nombre del nuevo profesor es = " + profesorNuevo.getNombre());
 		System.out.println("La edad del nuevo profesor es = " + profesorNuevo.getEdad());*/
-		System.out.println(profesorNuevo.toString());
-		System.out.println(alumno.toString());
+		System.out.println(profesorNuevo);
+		System.out.println(alumno);
 	}
 
 }
