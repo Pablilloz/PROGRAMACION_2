@@ -1,11 +1,11 @@
-package ejercicio28;
+package ejercicio30;
 
 import java.util.Scanner;
 
 import ejercicio22.Curso;
 import orientadaObjetos.Alumno;
 
-public class Main28 {
+public class Main30 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -56,7 +56,15 @@ public class Main28 {
 		} else {
 			System.out.println("Bien todos los alumnos son diferentes");
 		}
+		for(Alumno alumno : alumnos) {
+			System.out.println(alumno);
+			if(alumno.validar()) {
+				System.out.println("El alumno cumple las validaciones");
+			}
+			if(!alumno.validar()) {
+				System.out.println("El alumno no cumple las validaciones");
+			}
+		}
 	}
-
 
 }

@@ -1,8 +1,9 @@
-package orientadaObjetos;
+package ejercicio29;
 
 import java.util.Objects;
 
 import ejercicio22.Curso;
+import orientadaObjetos.Persona;
 
 public class Alumno extends Persona {
 
@@ -39,9 +40,21 @@ public class Alumno extends Persona {
 			return true;
 		}
 	}
-	
+
 	public boolean validar() {
-		
+		if (validar() == true) {
+			return true;
+		}
+
+		if (curso == null) {
+			return false;
+		}
+		if (nombre.equals(null) || nombre.length() <= 10) {
+			return false;
+		}
+		if (this.getEdad() != null || this.getEdad() >= 12 || this.getEdad() <= 65) {
+			return true;
+		}
 		return true;
 	}
 
