@@ -6,6 +6,7 @@ public class Main33 {
 		// TODO Auto-generated method stub
 		Semaforo semaforo = new Semaforo();
 semaforo.setColor("Violeta");
+
 	}
 
 }
