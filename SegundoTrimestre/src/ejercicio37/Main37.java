@@ -9,13 +9,30 @@ public class Main37 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<ColaCadenas> cola = new ArrayList<>();
-		ColaCadenas cola1 = new ColaCadenas();
-	}
-}
-	/*	cola.add(cola1.añadirCadena(null));
-		cola1.añadirCadena("Segundo");
+		ColaCadenas cola = new ColaCadenas();
 		System.out.println(cola);
-	}*/
 
+		cola.añadirCadena("Primero");
+		cola.añadirCadena("Segundo");
+		System.out.println(cola);
+
+		String elemento = cola.sacarCadena();
+		System.out.println(elemento);
+		System.out.println(cola);
+
+		cola.añadirCadena("Tercero");
+		System.out.println(cola);
+
+		while (cola.getTamaño() > 0) {
+			elemento = cola.sacarCadena();
+			System.out.println(elemento);
+		}
+		System.out.println(cola);
+
+		cola.añadirCadena("Cuarto");
+		System.out.println(cola);
+
+	}
+
+}
 

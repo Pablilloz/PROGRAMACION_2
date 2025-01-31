@@ -1,28 +1,26 @@
-package ejercicio37;
+package ejercicio38;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColaCadenas {
-
+public class PilaCadenas {
 	private List<String> listaCadenas;
 
-	public ColaCadenas() {
+	public PilaCadenas() {
 		this.listaCadenas = new ArrayList<>();
-
 	}
 
 	public void añadirCadena(String cadena) {
 		listaCadenas.add(cadena);
-
 	}
 
 	public String sacarCadena() {
+
 		if (listaCadenas.isEmpty()) {
 			return null;
 		}
-		String cadena = listaCadenas.get(0);
-		listaCadenas.remove(0);
+		String cadena = listaCadenas.get(listaCadenas.size()-1);
+		listaCadenas.remove(listaCadenas.size()-1);
 		return cadena;
 	}
 
@@ -32,11 +30,9 @@ public class ColaCadenas {
 		return tamaño;
 	}
 
-
-	
 	@Override
 	public String toString() {
-		return "ColaCadenas " + listaCadenas + "";
+		return "PilaCadenas [listaCadenas=" + listaCadenas + "]";
 	}
 
 	public List<String> getListaCadenas() {
@@ -46,5 +42,5 @@ public class ColaCadenas {
 	public void setListaCadenas(List<String> listaCadenas) {
 		this.listaCadenas = listaCadenas;
 	}
-}
 
+}
