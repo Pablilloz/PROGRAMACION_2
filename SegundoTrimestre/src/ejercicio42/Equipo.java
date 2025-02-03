@@ -1,14 +1,16 @@
-package ejercicio41;
+package ejercicio42;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import ejercicio41.Jugador;
+
 public class Equipo {
 	private String nombre;
 	private Jugador capitan;
 	private List<Jugador> jugadores;
-	private static String competicion;
+	private String competicion;
 
 	public Equipo(String nombre) {
 		this.nombre = nombre;
@@ -19,12 +21,12 @@ public class Equipo {
 
 	}
 
-	public static String getCompeticion() {
+	public String getCompeticion() {
 		return competicion;
 	}
 
-	public static void setCompeticion(String competicion) {
-		Equipo.competicion = competicion;
+	public void setCompeticion(String competicion) {
+		this.competicion = competicion;
 	}
 
 	public String getNombre() {
