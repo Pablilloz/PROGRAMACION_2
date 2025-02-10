@@ -4,7 +4,10 @@ public abstract class Personaje {
 	private String nombre;
 	private String codigo;
 	
-
+	public abstract Integer getPuntos();
+	public abstract Integer getResta();
+	public abstract Integer getSegundos();
+	
 	public String getNombre() {
 		return nombre;
 	}

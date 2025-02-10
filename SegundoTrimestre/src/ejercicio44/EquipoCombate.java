@@ -10,8 +10,9 @@ public class EquipoCombate {
 	public EquipoCombate() {
 		tropa = new ArrayList<>();
 		totalPuntosVida = 0;
-
-	}
+}
+	
+	
 
 	public List<Personaje> getTropa() {
 		return tropa;

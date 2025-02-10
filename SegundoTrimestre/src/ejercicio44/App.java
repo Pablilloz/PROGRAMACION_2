@@ -10,8 +10,14 @@ public class App {
 		Jugador jugador1 = new Jugador();
 		EquipoCombate equipo1 = new EquipoCombate();
 		Asesino asesino1 = new Asesino();
+		asesino1.setNombre("Paco");
+		asesino1.setCodigo("A1");
 		Asesino asesino2 = new Asesino();
+		asesino2.setCodigo("A2");
+		asesino2.setNombre("Luis");
 		Asesino asesino3 = new Asesino();
+		asesino3.setNombre("Juan");
+		asesino3.setCodigo("A3");
 		
 		List<Personaje>lista = new ArrayList<>();
 		lista.add(asesino3);
