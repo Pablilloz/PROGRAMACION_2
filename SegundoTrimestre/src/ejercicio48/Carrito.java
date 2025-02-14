@@ -1,21 +1,23 @@
-package ejercicio47;
+package ejercicio48;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Carrito {
 	private LocalDate fechaCreacion;
 	private LocalDate fechaActualizacion;
-	private List<Articulo> listaArticulos;
+	private Set<Articulo> listaArticulos;
 	private Cliente cliente;
 
 	public Carrito(Cliente cliente) {
 		this.fechaCreacion = LocalDate.now();
 		this.fechaActualizacion = LocalDate.now();
 		this.cliente = cliente;
-		this.listaArticulos = new ArrayList<>();
+		this.listaArticulos = new HashSet<>();
 	}
 
 	public Integer getCantidad() {
@@ -24,8 +26,8 @@ public class Carrito {
 
 	public Double getTotal() {
 		Double total = 0.0;
-		for (int i = 0; i < listaArticulos.size(); i++) {
-			total = total + listaArticulos.get(i).getPrecio();
+		for (Articulo articulo:listaArticulos ) {
+			total = total + articulo.getPrecio();
 		}
 		return total;
 	}
@@ -58,7 +60,7 @@ public class Carrito {
 		return cliente;
 	}
 
-	public List<Articulo> getListaArticulos() {
+	public Set<Articulo> getListaArticulos() {
 		return listaArticulos;
 	}
 

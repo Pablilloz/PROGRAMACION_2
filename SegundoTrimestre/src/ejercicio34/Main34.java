@@ -19,14 +19,14 @@ public class Main34 {
 			listaCadenas.add(cad);
 		}
 		System.out.println(listaCadenas.toString());
-// Apartado 1 
+		// Apartado 1 
 		for (int i = 0; i < listaCadenas.size(); i++) {
 
 			String mayus = listaCadenas.get(i).toUpperCase();
 			listaCadenas.set(i, mayus);
 		}
 		System.out.print(listaCadenas.toString() + " ");
-//Apartado 2
+		//Apartado 2
 		if (listaCadenas.contains("")) {
 			System.err.print("= La cadena contiene alguna cadena vacia ");
 		}

@@ -1,4 +1,9 @@
-package ejercicio47;
+package ejercicio48;
+
+import java.util.HashSet;
+
+import ejercicio47.Libro;
+import ejercicio47.Ropa;
 
 public class App {
 
@@ -9,7 +14,7 @@ public class App {
 		cliente1.setNombre("Blas de los Montes");
 		System.out.println(cliente1);
 
-		Carrito cesta = new Carrito(cliente1);
+		HashSet cesta = new HashSet();
 		//System.out.println(cesta);
 
 		Ropa poncho = new Ropa();
@@ -18,8 +23,8 @@ public class App {
 		poncho.setTalla("XL");
 		poncho.setPrecio(20.0);
 
-		cesta.addArticulo(poncho);
-		cesta.addArticulo(poncho);
+		cesta.add(poncho);
+		cesta.add(poncho);
 		System.out.println(cesta);
 
 		Libro nietzshe = new Libro();
@@ -27,13 +32,13 @@ public class App {
 		nietzshe.setDescripcion("Asi habla Zaratustra");
 		nietzshe.setPrecio(15.0);
 
-		cesta.addArticulo(nietzshe);
+		cesta.add(nietzshe);
 		System.out.println(cesta);
 
-		cesta.borrarArticulo(1);
+		cesta.remove(1);
 		System.out.println(cesta);
 
-		System.out.println(cesta.getPrecioMedio());
+		System.out.println(cesta.());
 
 		cesta.vaciarCesta();
 		System.out.println(cesta);

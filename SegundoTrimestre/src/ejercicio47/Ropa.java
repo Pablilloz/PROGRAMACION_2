@@ -1,14 +1,14 @@
 package ejercicio47;
 
 public class Ropa extends Articulo {
-	private Integer talla;
+	private String talla;
 	private String color;
 
-	public Integer getTalla() {
+	public String getTalla() {
 		return talla;
 	}
 
-	public void setTalla(Integer talla) {
+	public void setTalla(String talla) {
 		this.talla = talla;
 	}
 
