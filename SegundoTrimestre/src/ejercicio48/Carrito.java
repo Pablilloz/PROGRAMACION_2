@@ -40,12 +40,12 @@ public class Carrito {
 		return getCantidad() / getTotal();
 	}
 
-	public void borrarArticulo(int posicion) {
-		if (posicion >= 0 && posicion < this.listaArticulos.size()) {
-
+	public void borrarArticulo(Articulo posicion) {
+		if (listaArticulos.remove(posicion)) {
+			fechaActualizacion = LocalDate.now();
 		}
-		listaArticulos.remove(posicion);
-		fechaActualizacion = LocalDate.now();
+		
+		
 	}
 
 	public void vaciarCesta() {

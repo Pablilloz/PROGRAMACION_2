@@ -14,7 +14,7 @@ public class App {
 		cliente1.setNombre("Blas de los Montes");
 		System.out.println(cliente1);
 
-		HashSet cesta = new HashSet();
+		Carrito cesta = new Carrito(cliente1);
 		//System.out.println(cesta);
 
 		Ropa poncho = new Ropa();
@@ -23,8 +23,7 @@ public class App {
 		poncho.setTalla("XL");
 		poncho.setPrecio(20.0);
 
-		cesta.add(poncho);
-		cesta.add(poncho);
+	//	cesta.addArticulo(poncho);
 		System.out.println(cesta);
 
 		Libro nietzshe = new Libro();
@@ -32,15 +31,15 @@ public class App {
 		nietzshe.setDescripcion("Asi habla Zaratustra");
 		nietzshe.setPrecio(15.0);
 
-		cesta.add(nietzshe);
+		//cesta.add(nietzshe);
 		System.out.println(cesta);
 
-		cesta.remove(1);
+	//	cesta.remove(1);
 		System.out.println(cesta);
 
-		System.out.println(cesta.());
+		System.out.println(cesta);
 
-		cesta.vaciarCesta();
+		//cesta();
 		System.out.println(cesta);
 
 		System.out.println(cesta.getPrecioMedio());
