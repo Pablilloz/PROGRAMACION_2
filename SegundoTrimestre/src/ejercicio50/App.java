@@ -24,7 +24,7 @@ public class App {
 		//4
 		Pais pais4 = new Pais("es","España");
 		s1.add(pais4);
-		System.out.println("Apartado 4 = "+s1);
+		System.out.println("Apartado 4 = "+ s1);
 		// 5 se cambia el equals
 		
 		//6
