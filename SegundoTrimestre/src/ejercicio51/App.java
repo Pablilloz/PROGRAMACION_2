@@ -13,63 +13,36 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 		List<BigDecimal> lista = new ArrayList<>();
 
-		Integer num1;
-		Integer num2;
-		Integer num3;
-		Integer num4;
-		Integer num5;
+		while (lista.size() < 5) {
+			System.out.println("Dame un numero : ");
+			BigDecimal num = sc.nextBigDecimal();
+			if (!lista.isEmpty()) {
+				BigDecimal ultimo = lista.get(lista.size() - 1);
+				if (num.compareTo(ultimo) > 0) {
+					lista.add(num);
+				} else {
+					System.out.println("No es mayor que el anterior");
+				}
 
-		BigDecimal n1;
-		BigDecimal n2;
-		BigDecimal n3;
-		BigDecimal n4;
-		BigDecimal n5;
-
-		do {
-			// 1
-			System.out.print("Escriba un numero = ");
-			num1 = sc.nextInt();
-			n1 = new BigDecimal(num1);
-			System.out.println(n1);
-
-			System.out.print("Escriba un numero = ");
-			num2 = sc.nextInt();
-			n2 = new BigDecimal(num2);
-			System.out.println(n2);
-
-			System.out.print("Escriba un numero = ");
-			num3 = sc.nextInt();
-			n3 = new BigDecimal(num3);
-			System.out.println(n3);
-
-			System.out.print("Escriba un numero = ");
-			num4 = sc.nextInt();
-			n4 = new BigDecimal(num4);
-			System.out.println(n4);
-
-			System.out.print("Escriba un numero = ");
-			num5 = sc.nextInt();
-			n5 = new BigDecimal(num5);
-			System.out.println(n5);
-
-			// Añadimos a la lista
-			lista.add(n1);
-			lista.add(n2);
-			lista.add(n3);
-			lista.add(n4);
-			lista.add(n5);
-
-		} while ((num1 > num2) || (num2 > num3) || (num3 > num4) || (num4 > num5));
+			} else {
+				lista.add(num);
+			}
+		}
+		System.out.println("Lista");
+		System.out.println(lista);
 
 		// 2
-		BigDecimal suma = n1.add(n2).add(n3).add(n4).add(n5);
-		BigDecimal redondeado = suma.setScale(1, RoundingMode.HALF_DOWN);
-		System.out.println(redondeado);
+		BigDecimal suma = BigDecimal.ZERO;
+		for (BigDecimal dato : lista) {
+			suma = suma.add(dato);
+
+		}
+		suma = suma.setScale(1, RoundingMode.HALF_DOWN);
+		System.out.println(suma);
 
 		// 3
+		BigDecimal resultadoDivision = lista.get(0).divide(lista.get(1), 3, RoundingMode.HALF_UP);
+		System.out.println("División del primer número entre el segundo: " + resultadoDivision);
 
-		BigDecimal division = n1.divide(n2);
-		BigDecimal redondeado1 = division.setScale(3, RoundingMode.HALF_UP);
-		System.out.println(redondeado1);
 	}
 }
