@@ -1,4 +1,4 @@
-package ejer2Repaso;
+package ejer3Repaso;
 
 public class Telefono {
 
@@ -17,20 +17,20 @@ public class Telefono {
 
 	public void marcar(Integer num) {
 		System.out.println("LLAMANDO A " + num);
-		if (num.equals(this.numero)) {
+		if (num == this.numero) {
 			System.out.println("COMUNICANDO");
 		} else {
 			System.out.println("EN COMUNICACION");
 			this.enLlamada = true;
 		}
 	}
-
+	
 	public void colgar() {
-		if (this.enLlamada == true) {
+		if(this.enLlamada == true) {
 			System.out.println("COMUNICACIÓN TERMINADA");
 			this.enLlamada = false;
-		} else {
-
+		}else {
+			
 		}
 	}
 
