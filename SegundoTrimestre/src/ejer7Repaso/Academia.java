@@ -1,5 +1,7 @@
 package ejer7Repaso;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +48,44 @@ public class Academia {
 		}
 		return disponible;
 
+	}
+
+	public BigDecimal precioMedio() {
+		BigDecimal medio = BigDecimal.ZERO;
+		for (Curso curso : lista) {
+			medio = medio.add(curso.getPrecio());
+
+		}
+		medio.divide(BigDecimal.valueOf(lista.size(), 2));
+		return medio;
+	}
+
+	public void borrarCursosPasados() {
+		for (Curso cursos : lista) {
+			if (cursos.getFechaFin().isBefore(LocalDate.now())) {
+				lista.remove(cursos);
+			}
+		}
+	}
+
+	public Curso getCursoMasBarato() {
+		Curso barato = null;
+		for (Curso curso : lista) {
+			if (curso.getFechaIni().isAfter(LocalDate.now())) {
+				if (barato == null || curso.getPrecioMes().compareTo(barato.getPrecioMes()) < 0) {
+					barato = curso;
+				}
+			}
+		}
+		return barato;
+	}
+
+	public Integer getTotalPlazasLibres() {
+		Integer total = 0;
+		for (Curso curso : lista) {
+			total += (curso.getNumPlaTota() - curso.getNumPlaOcu());
+		}
+		return total;
 	}
 
 }
