@@ -11,8 +11,6 @@ public class EquipoCombate {
 		tropa = new ArrayList<>();
 		totalPuntosVida = 0;
 }
-	
-	
 
 	public List<Personaje> getTropa() {
 		return tropa;
