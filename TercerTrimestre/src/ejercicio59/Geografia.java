@@ -71,15 +71,17 @@ public class Geografia {
 
 	}
 
-	// Apartado 6 **
+	// Apartado 6
 	public void eliminarPaisConCapitalLetra(String letra) {
-		Iterator<Map.Entry<String, String>> iterador = paises.entrySet().iterator();
+		Set<Entry<String, String>> pares = paises.entrySet();
+		Iterator<Entry<String, String>> iterador = pares.iterator();
 		letra = letra.toUpperCase();
 
 		while (iterador.hasNext()) {
 			Map.Entry<String, String> entrada = iterador.next();
 			if (entrada.getValue().startsWith(letra)) {
 				iterador.remove();
+				break;
 			}
 
 		}
@@ -92,7 +94,7 @@ public class Geografia {
 
 		Set<Entry<String, String>> pares = paises.entrySet();
 		for (Entry<String, String> par : pares) {
-			if (par.getKey().contains(letra)) {
+			if (par.getValue().startsWith(letra.toUpperCase())) {
 				total++;
 			}
 		}
@@ -103,14 +105,17 @@ public class Geografia {
 	// Apartado 8
 	public void imprimirNumeroPaisesLetra(String letra) {
 		letra = letra.toUpperCase();
-
+		boolean encontrado = false;
 		Set<Entry<String, String>> pares = paises.entrySet();
 		for (Entry<String, String> par : pares) {
 			if (par.getValue().startsWith(letra)) {
 				System.out.println(par.getKey() + " - " + par.getValue());
-			} else {
-				System.out.println("Ninguna capital del mapa comienza por " + letra);
+				encontrado = true;
 			}
+
+		}
+		if (!encontrado) {
+			System.out.println("Ninguna capital del mapa comienza por " + letra);
 		}
 
 	}
@@ -119,7 +124,7 @@ public class Geografia {
 	public void mismaLetra() {
 		Set<Entry<String, String>> pares = paises.entrySet();
 		for (Entry<String, String> par : pares) {
-			if (par.getKey().startsWith(par.getValue().substring(0, 1))) {
+			if (par.getKey().substring(0, 1).startsWith(par.getValue().substring(0, 1))) {
 				System.out.println(par.getKey() + " - " + par.getValue());
 			} else {
 				System.out.println("no hay ningún país y capital que comiencen por la misma letra");
