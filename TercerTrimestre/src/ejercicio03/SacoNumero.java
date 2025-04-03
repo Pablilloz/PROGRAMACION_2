@@ -28,31 +28,20 @@ public class SacoNumero {
 	}
 
 	public BigDecimal division() {
-		BigDecimal operaciones = BigDecimal.ZERO;
-		BigDecimal primero = BigDecimal.ZERO;
-		BigDecimal recorrido;
-
 		try {
-			for (Integer reco : lista) {
-				if (reco == lista.getFirst()) {
-					primero = new BigDecimal(reco);
-
-				} else {
-					recorrido = new BigDecimal(reco);
-					if (reco == lista.getFirst() + 1) {
-						operaciones = primero.divide(recorrido);
-					} else {
-						operaciones = operaciones.divide(recorrido, 2, RoundingMode.HALF_UP);
-					}
-
-				}
+			BigDecimal resultado = new BigDecimal(lista.get(0));
+			for (int i = 1; i < lista.size(); i++) {
+				BigDecimal siguiente = new BigDecimal(lista.get(i));
+				resultado = resultado.divide(siguiente, 2, RoundingMode.HALF_UP);
 			}
-			return operaciones;
+			return resultado;
 		} catch (ArithmeticException e) {
-			System.out.println("El denominador es 0");
-			return operaciones;
+			return BigDecimal.ZERO;
+		} catch (IndexOutOfBoundsException e) {
+			return BigDecimal.ZERO;
+		} finally {
+			System.out.println("Division completa");
 		}
-
 	}
 
 	@Override
