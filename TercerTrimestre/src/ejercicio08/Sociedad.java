@@ -1,4 +1,4 @@
-package ejercicio07;
+package ejercicio08;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -44,4 +44,9 @@ public class Sociedad {
 
 	}
 
+	
+	public void borrarGenero() {
+		
+	}
+	
 }
