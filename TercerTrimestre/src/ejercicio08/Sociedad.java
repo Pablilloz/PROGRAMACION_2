@@ -2,6 +2,7 @@ package ejercicio08;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Sociedad {
@@ -44,9 +45,18 @@ public class Sociedad {
 
 	}
 
-	
-	public void borrarGenero() {
-		
+	public void borrarGenero(String genero) throws ParametroIncorrectoException {
+		if (!genero.equalsIgnoreCase("H") && !genero.equalsIgnoreCase("M")) {
+			throw new ParametroIncorrectoException("Solo existen dos generos");
+		}
+		Iterator<Persona> iterator = conjunto.iterator();
+		while (iterator.hasNext()) {
+			Persona p1 = (Persona) iterator.next();
+			if (p1.getGenero().equalsIgnoreCase(genero)) {
+				iterator.remove();
+			}
+		}
+
 	}
-	
+
 }
