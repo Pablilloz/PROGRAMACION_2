@@ -1,11 +1,11 @@
-package modelo;
+package ejer02.modelo;
 
+import java.time.LocalDate;
 
-
-public class Persona {
+public class Personas {
 	private String nombre;
 	private String dni;
-	private String fecha;
+	private LocalDate fecha;
 	private String apellidos;
 
 
@@ -25,11 +25,11 @@ public class Persona {
 		this.dni = dni;
 	}
 
-	public String getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(String fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 
@@ -41,4 +41,10 @@ public class Persona {
 		this.apellidos = apellidos;
 	}
 
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", dni=" + dni + ", fecha=" + fecha + ", apellidos=" + apellidos + "]";
+	}
+
 }
+

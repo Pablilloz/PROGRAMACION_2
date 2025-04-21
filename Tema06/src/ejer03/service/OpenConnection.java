@@ -1,4 +1,4 @@
-package servicio;
+package ejer03.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
