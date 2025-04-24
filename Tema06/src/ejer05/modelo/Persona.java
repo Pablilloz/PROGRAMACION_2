@@ -1,9 +1,9 @@
-package ejer03.modelo;
+package ejer05.modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import ejer03.service.DatoIncompletosException;
+import ejer05.service.DatoIncompletosException;
 
 public class Persona {
 

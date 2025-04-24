@@ -1,4 +1,4 @@
-package ejer03.service;
+package ejer05.service;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import ejer02.servicio.OpenConnection;
-import ejer03.modelo.Persona;
+import ejer05.service.OpenConnection;
+import ejer05.modelo.Persona;
 
 public class PersonaService extends OpenConnection {
 
@@ -62,7 +62,7 @@ public class PersonaService extends OpenConnection {
 		}
 	}
 
-	public void insertarPersona(Persona p) throws SQLException {
+	public void insertarPersona(ejer05.modelo.Persona p) throws SQLException {
 
 		String sql = "INSERT INTO PERSONAS VALUES (?,?,?,?)";
 		try (Connection conn = crearConeccion(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -77,4 +77,31 @@ public class PersonaService extends OpenConnection {
 		}
 	}
 
+	public void ActualizarPersona(Persona p) throws SQLException {
+
+		String sql = "UPDATE PERSONAS SET (?,?,?,?) WHERE DNI = ?";
+		try (Connection conn = crearConeccion(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setString(1, p.getDni());
+			stmt.setString(2, p.getNombre());
+			stmt.setString(3, p.getApellidos());
+			stmt.setDate(4, Date.valueOf(p.getFecha()));
+			stmt.setString(5, p.getDni());
+
+			System.out.println(sql);
+			stmt.execute();
+		}
+	}
+
+	public void borrarPersona(String dni) throws SQLException {
+		String sql = "DELETE PERSONAS WHERE DNI = ? ";
+
+		try (Connection conn = crearConeccion(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, dni);
+			System.out.println(sql);
+			stmt.execute();
+		}
+	}
+
+	
 }

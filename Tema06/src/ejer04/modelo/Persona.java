@@ -1,4 +1,4 @@
-package ejer03.modelo;
+package ejer04.modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
