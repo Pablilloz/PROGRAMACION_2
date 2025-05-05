@@ -93,7 +93,7 @@ public class PersonaService extends OpenConnection {
 		}
 	}
 
-	public void borrarPersona(String dni) throws SQLException {
+	public void borrarPersona(Connection conn2, String dni) throws SQLException {
 		String sql = "DELETE PERSONAS WHERE DNI = ? ";
 
 		try (Connection conn = crearConeccion(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -103,5 +103,44 @@ public class PersonaService extends OpenConnection {
 		}
 	}
 
-	
+	public void insertarPersonas(List<Persona> lista) throws SQLException {
+		String sql = "INSERT INTO PERSONAS VALUES (?,?,?,?)";
+		try (Connection conn = crearConeccion(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+			conn.setAutoCommit(false);
+			try {
+				for (Persona personas : lista) {
+					stmt.setString(1, personas.getDni());
+					stmt.setString(2, personas.getNombre());
+					stmt.setString(3, personas.getApellidos());
+					stmt.setDate(4, Date.valueOf(personas.getFecha()));
+					stmt.execute();
+				}
+				conn.commit();
+			} catch (SQLException e) {
+				conn.rollback();
+			}
+		}
+	}
+
+	public int borrarPersonasA() throws SQLException {
+		try (Connection conn = crearConeccion();) {
+			conn.setAutoCommit(false);
+			int cont = 0;
+			try {
+				List<Persona> Personas = new ArrayList<>();
+
+				Personas = consultarPersonas("");
+				for (Persona a : Personas) {
+					if (a.esMayor()) {
+						borrarPersona(conn, a.getDni());
+						cont++;
+					}
+				}
+				conn.commit();
+			} catch (SQLException e) {
+				conn.rollback();
+			}
+			return cont;
+		}
+	}
 }

@@ -56,4 +56,17 @@ public class Persona {
 			throw new DatoIncompletosException();
 		return true;
 	}
+
+	public Boolean esMayor() {
+		Integer año = fecha.getYear();
+		Integer añoActual = 2025;
+		Integer edad = año - añoActual;
+		if (edad < 18) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+
 }
