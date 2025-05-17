@@ -32,6 +32,8 @@ public class App {
 		System.out.print("Introduce el precio = ");
 		BigDecimal precio = sc.nextBigDecimal();
 		libro.setPrecio(precio);
+		
+		System.out.println("¿Quieres terminar?");
 
 		return null;
 	}
